@@ -1,0 +1,7 @@
+﻿  main.c
+C:\Programming\Лабораторные работы КПИ\Основы программирования\1 курс\Лабораторная работа №1\C\main.c(29,8): warning C4013: system: нет определения; предполагается "extern" с возвратом типа "int"
+  Создание кода
+  Previous IPDB not found, fall back to full compilation.
+  All 7 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  C.vcxproj -> C:\Programming\Лабораторные работы КПИ\Основы программирования\1 курс\Лабораторная работа №1\C\Release\Result.exe
