@@ -1,11 +1,15 @@
-import math
-from os import system
+""" Варіант № 29
+    Обчислити відстань між двома точками з
+    координатами (x1, y1) і (x2, y2) """
 
-x1 = float(input('x1 = '))
-y1 = float(input('y1 = '))
-x2 = float(input('x2 = '))
-y2 = float(input('y2 = '))
-a = math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2)
-print('a =', round(a, 4))
+import math # Імпортування модуля math для функціх квадратного кореня
+from os import system # Імпортування функції system з модуля os для призупинення програми
 
-system('pause')
+x1 = float(input('x1 = ')) # Введення координати x1
+y1 = float(input('y1 = ')) # Введення координати y1
+x2 = float(input('x2 = ')) # Введення координати x2
+y2 = float(input('y2 = ')) # Введення координати y2
+a = math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2) # Обчислення відстані між точками
+print('a =', round(a, 4)) # Виведення відстані між точками
+
+system('pause') # Команда системі, щоб програма призупинилася до натискання клавіші й не закривалася
