@@ -1,4 +1,5 @@
 from math import pi, sin, log
+from os import system
 
 """ Варiант 29
     Наближено (iз заданою точнiстю ε
@@ -10,7 +11,7 @@ b = pi
 sum = 0
 counter = 1
 
-precision = float(input('Введіть тоічніть: '))
+precision = float(input('Введіть точніть: '))
 t = precision + 1
 n = int(input('Введіть кількість відрізків розбиття: '))
 
@@ -25,3 +26,5 @@ while abs(t) > precision:
 sum *= h
 
 print('Резульатат: %.10f' % sum)
+
+system('pause')
