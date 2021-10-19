@@ -9,4 +9,3 @@ for i in range(1000, 10000):
         print(f'{i} - число-паліндром')
 
 system('pause')
-
