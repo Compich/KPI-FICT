@@ -84,7 +84,7 @@ void selection_sort(double* Y, int size)
 double sum_of_elements(double* Y, int size)
 {
 	double sum = 0;
-	for (int i = 1; i < size; i += 2)
+	for (int i = 0; i < size; i += 2)
 	{
 		sum += Y[i];
 	}
