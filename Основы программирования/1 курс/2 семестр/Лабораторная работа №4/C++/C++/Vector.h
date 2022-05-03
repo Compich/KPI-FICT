@@ -20,6 +20,7 @@ public:
 	Vector& operator +=(double a_dbAngle);
 	bool operator == (const Vector& a_v) const;
 	bool operator != (const Vector& a_v) const;
+	friend ostream& operator << (ostream& os, const Vector& a_v);
 private:
 	double m_dbR;
 	double m_dbPolar;
@@ -27,4 +28,3 @@ private:
 };
 
 bool equalDouble(double db1, double db2);
-ostream& operator << (ostream& os, const Vector& a_v);

@@ -88,5 +88,5 @@ ostream& operator<<(ostream& os, const Vector& a_v)
 	return os << "Декартові координати" << endl
 		<< a_v.toCartesian() << endl
 		<< "Полярні координати" << endl
-		<< "(Радіус; полярний; азимутальний): (" << a_v.getRadius() << "; " << a_v.getPolar() << "°; " << a_v.getAzimuthal() << "°)";
+		<< "(Радіус; полярний; азимутальний): (" << a_v.m_dbR << "; " << a_v.m_dbPolar << "°; " << a_v.m_dbPolar << "°)";
 }
