@@ -1,11 +1,21 @@
 #include "Teacher.h"
 
 Teacher::Teacher(const string& a_sName, const TDate& a_dt)
-	: Person(a_sName, a_dt), m_rgDisciplines{ nullptr }, m_cDisciplinesCount{0}
+	: Person(a_sName, a_dt), m_rgDisciplines{ nullptr }, m_cDisciplinesCount{ 0 }
 {}
 
+Teacher::Teacher(const Teacher& teacher)
+	: Person{ teacher }, m_cDisciplinesCount { teacher.m_cDisciplinesCount }
+{
+	m_rgDisciplines = new Discipline[teacher.m_cDisciplinesCount];
+	for (size_t i = 0; i < teacher.m_cDisciplinesCount; ++i)
+	{
+		m_rgDisciplines[i] = teacher.m_rgDisciplines[i];
+	}
+}
+
 Teacher::Teacher()
-	: m_rgDisciplines{ nullptr }, m_cDisciplinesCount { 0 }
+	: m_rgDisciplines{ nullptr }, m_cDisciplinesCount{ 0 }
 {
 	int nDisciplinesGoal = 1 + rand() % 3;
 
@@ -27,6 +37,24 @@ Teacher::Teacher()
 			addDiscipline(randomDiscipline);
 		}
 	}
+}
+
+Teacher::Teacher(Teacher&& teacher) noexcept
+	: Person{teacher}, m_cDisciplinesCount{teacher.m_cDisciplinesCount}, m_rgDisciplines{teacher.m_rgDisciplines}
+{
+	teacher.m_rgDisciplines = nullptr;
+}
+
+Teacher& Teacher::operator=(Teacher&& teacher) noexcept
+{
+	if (m_rgDisciplines)
+	{
+		delete[] m_rgDisciplines;
+	}
+	m_cDisciplinesCount = teacher.m_cDisciplinesCount;
+	m_rgDisciplines = teacher.m_rgDisciplines;
+	teacher.m_rgDisciplines = nullptr;
+	return *this;
 }
 
 double Teacher::getSalary() const
@@ -51,7 +79,7 @@ Teacher& Teacher::addDiscipline(const Discipline& a_discipline)
 	{
 		newDisciplines[i] = m_rgDisciplines[i];
 	}
-	
+
 	if (m_rgDisciplines != nullptr)
 	{
 		delete[] m_rgDisciplines;
@@ -83,4 +111,12 @@ ostream& operator << (ostream& os, const Teacher& a_teacher)
 	}
 
 	return os;
+}
+
+Teacher::~Teacher()
+{
+	if (m_rgDisciplines)
+	{
+		delete[] m_rgDisciplines;
+	}
 }

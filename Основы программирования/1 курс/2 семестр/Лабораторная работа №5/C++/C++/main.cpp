@@ -41,9 +41,12 @@ int main()
 	cout << "Згенеровані викладачі:" << endl;
 	outputTeachers(rgTeachers, m);
 
-	Teacher teacherWithHighestSalary = getTeacherWithHighestSalary(rgTeachers, m);
+	if (m)
+	{
+		Teacher teacherWithHighestSalary = getTeacherWithHighestSalary(rgTeachers, m);
 
-	cout << "Викладач із найбільною зарплатою:" << endl << teacherWithHighestSalary << endl;
+		cout << "Викладач із найбільною зарплатою:" << endl << teacherWithHighestSalary << endl;
+	}
 
 	system("pause");
 	return 0;

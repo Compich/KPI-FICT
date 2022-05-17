@@ -10,9 +10,8 @@ public:
 	double getSalary() const;
 	string getGroupName() const { return m_sGroupName; }
 	double getGradePointAverage() const { return m_dbGradePointAverage; }
+	friend ostream& operator << (ostream&, const Student&);
 private:
 	string m_sGroupName;
 	double m_dbGradePointAverage;
 };
-
-ostream& operator << (ostream&, const Student&);
